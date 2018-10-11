@@ -146,6 +146,48 @@ require('devtron').install();
 <img alt="devtron" src="./require-devtron.jpg" width="300">
 <img alt="devtron" src="./devtron.jpg" width="300">
 
+## 调试工具包
+
+### [electron-debug](https://github.com/sindresorhus/electron-debug)
+
+> 该调试工具库中包含了一些常用的调试工具 `devtron` `react`，并添加了一些调试快捷键，`源码` 如下：
+
+```js
+app.on('ready', () => {
+  addExtensionIfInstalled('devtron', name => require(name).path);
+  addExtensionIfInstalled('electron-react-devtools', name => require(name).path);
+
+  localShortcut.register('CmdOrCtrl+Shift+C', inspectElements);
+  localShortcut.register(isMacOS ? 'Cmd+Alt+I' : 'Ctrl+Shift+I', devTools);
+  localShortcut.register('F12', devTools);
+
+  localShortcut.register('CmdOrCtrl+R', refresh);
+  localShortcut.register('F5', refresh);
+});
+```
+
+##### 使用方式
+
+```js
+require('electron-debug')();
+```
+
+### [electron-devtools-installer](https://github.com/MarshallOfSound/electron-devtools-installer)
+
+> 可以通过谷歌应用商店 `ChromeStore`，查找对应的应用ID，即可进行安装，`electron-devtools-installer` 内置了些常用的ID，如 `REACT_DEVELOPER_TOOLS` `REDUX_DEVTOOLS` `REACT_PERF` 等，⚠️ 需要翻墙️ ⚠️
+
+##### 使用方式
+
+```js
+import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+
+installExtension(REACT_DEVELOPER_TOOLS)
+    .then((name) => console.log(`Added Extension:  ${name}`))
+    .catch((err) => console.log('An error occurred: ', err));
+```
+
 ## 附录
 
 - [devtron](https://github.com/electron/devtron)
+- [electron-debug](https://github.com/sindresorhus/electron-debug)
+- [electron-devtools-installer](https://github.com/MarshallOfSound/electron-devtools-installer)
