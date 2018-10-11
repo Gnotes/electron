@@ -14,6 +14,7 @@
   "author": "xing.he",
   "license": "MIT",
   "devDependencies": {
+    "devtron": "^1.4.0",
     "electron": "^3.0.3"
   }
 }

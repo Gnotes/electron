@@ -14,6 +14,9 @@ function createWindow() {
   // 打开开发者工具
   win.webContents.openDevTools()
 
+  // 开启 devtron 调试工具
+  // require('devtron').install();
+
   // 当 window 被关闭，这个事件会被触发。
   win.on('closed', () => {
     // 取消引用 window 对象，如果你的应用支持多窗口的话，
