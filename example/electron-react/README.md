@@ -113,6 +113,8 @@ app.on('activate', () => {
 yarn electron-dev
 ```
 
+<img alt="electron-react-app" src="./react-app.jpg" width="300">
+
 ## 附录
 
 - [concurrently](https://www.npmjs.com/package/concurrently) : 同时启动多个命令
