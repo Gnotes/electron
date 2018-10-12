@@ -6,7 +6,7 @@
 
 > 详细地说，当用Electron启动一个应用，会创建一个主进程。这个主进程负责与你系统原生的GUI进行交互并为你的应用创建GUI（在你的应用窗口）
 
-<div style="text-align:center"> 
+<div align="center"> 
 <img alt="work-flow" src="./flow-chart.png" width="300" > 
 <p>—— 《用 Electron 开发桌面应用》</p>
 </div>
