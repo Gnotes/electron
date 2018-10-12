@@ -26,7 +26,7 @@
 - [官网](https://electronjs.org/)
 - [中文网](https://electron.org.cn/)
 
-#### Articles
+## Articles
 
 - [用 Electron 开发桌面应用](http://get.ftqq.com/7870.get)
 - [Electron + React + Node.js + ES6 开发桌面软件](https://blog.csdn.net/mingzznet/article/details/53512475)
