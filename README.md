@@ -17,9 +17,16 @@
 - [electron-react](#)
 - [electron-react-ui](#)
 
-## Others
+## Tools
 
-- [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) : 
+- [electron-forge](https://github.com/electron-userland/electron-forge)
+> Electron Forge 是一个用来构建现代化Electron应用的完善的工具。 Electron Forge将多个现有的（ 且有稳定维护的 ）Electron构建工具整合为一个简单易用的工具包，所有人都可以用它来快速地搭建Electron开发环境
+
+- [electron-builder](https://github.com/electron-userland/electron-builder)
+> Electron Builder 是一个完备的Electron应用打包和分发解决方案，它致力于软件开发的集成体验。
+
+- [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
+> 一个 Electron + React 模板，并在内部使用了 electron-builder
 
 ## References
 
