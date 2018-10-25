@@ -2,6 +2,8 @@ const template = [
   {
     label: 'Edit',
     submenu: [
+      { label: '菜单1', accelerator: 'CmdOrCtrl+Shift+I', },
+      { label: '菜单2', accelerator: 'Alt+I', },
       { role: 'undo' },
       { role: 'redo' },
       { type: 'separator' },

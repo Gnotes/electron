@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
 const template = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -28,6 +28,10 @@ function createWindow() {
   // 添加上下文菜单
   const menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
+  // 注册快捷键
+  globalShortcut.register('CmdOrCtrl+Shift+I', () => {
+    console.log('输出：CmdOrCtrl+Shift+I')
+  })
 
   // ================================================
   // 然后加载应用的远程资源URL。

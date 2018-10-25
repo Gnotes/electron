@@ -11,6 +11,8 @@ const template = [
   {
     label: 'Edit',
     submenu: [
+      { label: '菜单1', accelerator: 'CmdOrCtrl+Shift+I', },
+      { label: '菜单2', accelerator: 'Alt+I', },
       { role: 'undo' },
       { role: 'redo' },
       { type: 'separator' },
@@ -71,6 +73,8 @@ module.exports = template;
 #### 2. 修改 `main.js` 添加菜单模板
 
 ```diff
+- const { app, BrowserWindow } = require('electron');
++ const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
 + const template = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -99,7 +103,11 @@ function createWindow() {
   win = new BrowserWindow({ width: 800, height: 600 })
 +  // 添加上下文菜单
 +  const menu = Menu.buildFromTemplate(template)
-+  Menu.setApplicationMenu(menu)
++  Menu.setApplicationMenu(menu);
++  // 注册快捷键
++  globalShortcut.register('CmdOrCtrl+Shift+I', () => {
++    console.log('输出：CmdOrCtrl+Shift+I')
++  })
 }
 ```
 
