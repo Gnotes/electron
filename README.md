@@ -17,6 +17,7 @@
 - [electron-react](#)
 - [electron-react-ui](#)
 - [electron-forge-react](#)
+- [electron-menu](#)
 
 ## Tools
 
