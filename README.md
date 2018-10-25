@@ -38,3 +38,5 @@
 
 - [用 Electron 开发桌面应用](http://get.ftqq.com/7870.get)
 - [Electron + React + Node.js + ES6 开发桌面软件](https://blog.csdn.net/mingzznet/article/details/53512475)
+- [利用Electron构建桌面应用](https://www.coolecho.net/article/av51)
+- [Creating a markdown app with Electron and React](http://kazuar.github.io/markdown-app/)
