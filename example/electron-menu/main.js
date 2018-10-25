@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
+const { app, BrowserWindow, Menu, MenuItem, globalShortcut, ipcMain } = require('electron');
 const template = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -76,3 +76,12 @@ app.on('activate', () => {
 
 // 在这个文件中，你可以续写应用剩下主进程代码。
 // 也可以拆分成几个文件，然后用 require 导入。
+const menu = new Menu()
+menu.append(new MenuItem({ label: 'I\'m Right Menu' }))
+menu.append(new MenuItem({ type: 'separator' }))
+menu.append(new MenuItem({ label: 'Electron', type: 'checkbox', checked: true }))
+
+ipcMain.on('on-show-context-menu', (event) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  menu.popup(win)
+})

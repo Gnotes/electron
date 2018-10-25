@@ -74,7 +74,7 @@ module.exports = template;
 
 ```diff
 - const { app, BrowserWindow } = require('electron');
-+ const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
++ const { app, BrowserWindow, Menu, MenuItem, globalShortcut, ipcMain } = require('electron');
 + const template = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -109,9 +109,40 @@ function createWindow() {
 +    console.log('输出：CmdOrCtrl+Shift+I')
 +  })
 }
+
++ const menu = new Menu()
++ menu.append(new MenuItem({ label: 'I\'m Right Menu' }))
++ menu.append(new MenuItem({ type: 'separator' }))
++ menu.append(new MenuItem({ label: 'Electron', type: 'checkbox', checked: true }))
+
++ ipcMain.on('on-show-context-menu', (event) => {
++   const win = BrowserWindow.fromWebContents(event.sender)
++   menu.popup(win)
++ })
 ```
 
-#### 3. 启动
+#### 3. 修改 App.js 添加右键事件
+
+```diff
++ const { ipcRenderer } = window.require('electron');
+
+class App extends Component {
++  showRightMenu = () => {
++    ipcRenderer.send('on-show-context-menu');
++  }
+
+  render() {
+    return (
+-      <div className="App">
++      <div className="App" onContextMenu={this.showRightMenu}>
+    );
+  }
+}
+
+export default App;
+```
+
+#### 4. 启动
 
 ```bash
 yarn electron-dev
